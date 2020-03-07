@@ -68,16 +68,16 @@ class Chain:
         genesis_block = Block("Genesis", "")
         return genesis_block
 
-    def add_block(self, block):
-        """
-        Add a new block to chain which satisfies some conditions, such as proof of work algorithm.
-        :param block:
-        :return:
-        """
-        block.previous_hash = self.get_latest_block().hash
-        # block.hash = block.compute_hash()
-        block.mine(self.difficulty)
-        self.chain.append(block)
+    # def add_block(self, block):
+    #     """
+    #     Add a new block to chain which satisfies some conditions, such as proof of work algorithm.
+    #     :param block:
+    #     :return:
+    #     """
+    #     block.previous_hash = self.get_latest_block().hash
+    #     # block.hash = block.compute_hash()
+    #     block.mine(self.difficulty)
+    #     self.chain.append(block)
 
     def add_transaction(self, tx):
         self.transaction_pool.append(tx)
